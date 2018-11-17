@@ -1,0 +1,26 @@
+
+.App .MessageList {
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.App {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 500px;
+  width: 100%;
+  margin: .5em;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.App .MessageForm {
+  background: #eee;
+  border-top: 1px solid #ccc;
+  border-radius: 0 0 3px 3px;
+  box-sizing: border-box;
+  flex: 0 0 30px;
+}
+

@@ -1,34 +1,25 @@
 import React, { Component } from 'react';
-import MessageForm from './components/MessageForm';
-import MessageList from "./components/MessageList";
-import Buttons from './components/buttons';
 import './App.css';
-
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import CreateM from './components/CreateM';
+import JoinM from './components/JoinM';
+import CustomNavbar from './components/Nav';
+import Meeting from './components/Meeting';
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      messages: [],
-    }
-  } 
-
-  handleNewMessage = (text) => {
-    this.setState({
-      messages: [...this.state.messages, { me: true, author: "Me", body: text }],
-    })
-  }
-
   render() {
     return (
-      <div className="App">
-        <Buttons />
-        <MessageList messages={this.state.messages} />
-        <MessageForm onMessageSend={this.handleNewMessage} />
-      </div>
+      <Router>
+        <div>
+          <CustomNavbar />
+          <Route exact path="/" component={CreateM} />
+          <Route path="/Join" component={JoinM} />
+          <Route exact path="/Meeting" component={Meeting} />
+
+        </div>
+      </Router>
     );
   }
 }
-
 
 export default App;
